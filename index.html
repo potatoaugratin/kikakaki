@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>きかかき</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-mode">
+  <header>
+    <h1>きかかき</h1>
+  </header>
+
+  <main>
+    <section>
+      <p>2D や 3D な物の創造アプリ</p>
+    </section>
+    <section>
+      <h2>デモ</h2>
+      <center>
+	<img src="gif/demo.gif" alt="demo">
+        <p><a href="https://www.youtube.com/results?search_query=oiia+cat" target="_blank">このネコが知ってるかな?</a></p>
+      <center>
+
+    </section>
+    <section>
+      <h2>この作品作るきっかけは?</h2>
+      <p>最近油絵と描きなどに夢中してしまって、なんとなく描きが関係あるアプリを作りたいなと思っていました。</p>
+      <p>ネットで調べてみたら、この<a href="https://www.a1k0n.net/2011/07/20/donut-math.html" target="_blank">くるくるドーナツ</a>を見つけました。</p>
+      <center>
+        <img src="gif/donut.gif" alt="donut">
+        <p>くるくるドーナツ</p>
+      <center>
+      <p>そこでいいアイデアが思いつきました。「2D なものを 3D に変更できるアプリっていいんじゃない?」と考えました。</p>
+      <p>ちなみに「きかかき」は漢字で「幾何・描き」</p>
+    </section>
+
+    <section>
+      <h2>インストール</h2>
+      <ul>
+        <li>ソースファイル：<a href="src/kkkk-0.3.tgz">kkkk-0.3.tgz</a></li>
+        <li>コンパイル・実行：</li>
+      </ul>
+      <pre>
+$ tar zxvf kkkk-0.3.tgz
+$ cd kkkk-0.3/
+$ make
+$ ./kkkk
+      </pre>
+    </section>
+
+    <section>
+      <h2>操作方法</h2>
+      <ul>
+        <li><span class="highlight-red">注意 : </span>
+          <ul>
+            <li><span class="highlight-red">'q' 押せば出る</span></li>
+            <li><span class="highlight-red">画面の文字が大きすぎるならばボタンが重なるため、画面を小さくしてください (ctrl + (-)) (アプリ使用中場合 shift+c もしてください)</span></li>
+            <li><span class="highlight-red">クリックはちゃんとしなければならない。Ubuntuの画面は反応が悪いので、クリックしたまま１秒くらい待ってください。手離すときも mouse 動くまえに１秒くらいで待ってください</span></li>
+            <li><span class="highlight-red">念のため、複数の機能お互いにつけないこと。例: Line + Selection</span></li>
+            <li><span class="highlight-red">使用の際には日本語か英語以外の言語入力など使わないでください</span></li>
+            <li><span class="highlight-red">使用中画面リサイズを対策したが問題なしまでと言えないのでできるだけ避けてください</span></li>
+            <li><span class="highlight-red">画面がボロボロになったら shift+c してくさだい (もし選んだものがあったら "2D" 押したらそのものが出る)</span></li>
+            <li><span class="highlight-red">Double click がたまに受け取らないので、よければ shortcut を使ってください</span></li>
+          </ul>
+        </li>
+        <li>ボタン色:
+          <ul>
+            <li>Blue: ついている</li>
+            <li>White: ついてない</li>
+            <center>
+              <img src="img/button_color.png" alt="button_color">
+              <p>Drawがついてない, Lineがついている</p>
+            <center>
+          </ul>
+        </li>
+        <li>Draw : 
+          <ul>
+            <li>Click (shortcut 'd'): ペンをトグル。ペンがついているとき、mouse クリックしたままで動くと、"x" が出る。</li>
+            <center>
+            <img src="gif/draw.gif" alt="draw">
+            <p>Draw デモ</p>
+            <center>
+            <li>Double click (shortcut shift+'d'): <span class="highlight-red">*特別: ついていれば CYAN が表す。</span>このボタンがついていれば、ものを移動または回転するとき表したもとのものは消さない。</li>
+            <center>
+              <img src="gif/draw_2.gif" alt="draw_2">
+              <p>Draw double click デモ</p>
+            <center>
+          </ul>
+        </li>
+        <li>Line:
+          <ul>
+            <li>Click (shortcut 'l'): 二つの点を選んであと線ができる。</li>
+            <center>
+              <img src="gif/line.gif" alt="line">
+              <p>Line デモ</p>
+            <center>
+          </ul>
+        </li>
+        <li>Rotate:
+          <ul>
+            <li>Click (shortcut 'r'): 最初に一つの点を選ぶ、その点は中心とする。選んだものがあったら (selection あと)、そのものを選んだ点の周囲に (X, Y, Z)角度 回転させる。</li>
+            <li>Double click (shortcut shift+'r'): 選んだ中心を消す。</li>
+          </ul>
+        </li>
+        <li>Select:
+          <ul>
+            <li>Click (shortcut 's'): mouse クリックしたままで動くと、箱が出る。 その箱でものを選べる。選んであと改めて click または 's' を押す必要がある。しないと、選んでない。</li>
+            <center>
+              <img src="gif/rotate.gif" alt="rotate">
+              <p>Rotate と Select デモ</p>
+            <center>
+          </ul>
+        </li>
+        <li>Fill:
+          <ul>
+            <li>Click (shortcut 'f'): 選んだもの (selection あと) の中に 'x' を詰める。</li>
+            <center>
+              <img src="gif/fill.gif" alt="fill">
+              <p>Fill デモ</p>
+            <center>
+          </ul>
+        </li>
+        <li>Clear:
+          <ul>
+            <li>Click (shortcut 'c'): 画面をクリア。中心も消す。</li>
+          </ul>
+        </li>
+        <li>Erase:
+          <ul>
+            <li>Click (shortcut 'e'): ペンと逆、クリックしたままで動くと、' ' を入れる。</li>
+            <center>
+              <img src="gif/erase.gif" alt="erase">
+              <p>Erase デモ</p>
+            <center>
+          </ul>
+        </li>
+        <li>Help: (Scoll 可能)
+          <ul>
+            <li>Click (shortcut 'h'): この画面を示す。もう一度 'h' を押せば、Help 画面を非表示にする。*この画面を表示する間、画面クリックまたは他の shortcut が機能しない。</li>
+            <center>
+              <img src="gif/help.gif" alt="help">
+              <p>Help デモ</p>
+            <center>
+          </ul>
+        </li>
+        <li>X: X 軸周囲の回転角度 ( roll )
+          <ul>
+            <li>Click (shortcut 'x'): 角度を増やる。</li>
+            <li>Double click (shortcut shift+'x'): 角度を減らす。</li>
+          </ul>
+        </li>
+        <li>Y: Y 軸の周囲の回転角度 ( pitch )
+          <ul>
+            <li>Click (shortcut 'y'): 角度を増やる。</li>
+            <li>Double click (shortcut shift+'y'): 角度を減らす。</li>
+          </ul>
+        </li>
+        <li>Z: Z 軸周囲の回転角度 ( yaw )
+          <ul>
+            <li>Click (shortcut 'z'): 角度を増やる。</li>
+            <li>Double click (shortcut shift+'z'): 角度を減らす。</li>
+          </ul>
+          <center>
+            <img src="gif/xyz_rotate_demo.gif" alt="xyz_rotate_demo">
+            <p><a href="src/xyz.c">yaw pitch roll デモ</a></p>
+          <center>
+        </li>
+        <li>* (X, Y, Z) について:
+          <ul>
+            <li>角度&gt;2*pi になったら 0 に戻る。</li>
+            <li>角度&lt;0 になったら 2*pi になる。</li>
+            <center>
+              <img src="gif/xyz.gif" alt="xyz">
+              <p>XYZ デモ</p>
+            <center>
+          </ul>
+        </li>
+        <li>🡑 :
+          <ul>
+            <li>Click (shortcut KEY_UP): 選んだものを上に移動する。</li>
+          </ul>
+        </li>
+        <li>🡓 :
+          <ul>
+            <li>Click (shortcut KEY_DOWN): 選んだものを下に移動する。</li>
+          </ul>
+        </li>
+        <li>🡒 :
+          <ul>
+            <li>Click (shortcut KEY_RIGHT): 選んだものを右に移動する。</li>
+          </ul>
+        </li>
+        <li>🡐 :
+          <ul>
+            <li>Click (shortcut KEY_LEFT): 選んだものを左に移動する。</li>
+          </ul>
+        </li>
+        <li>+: 
+          <ul>
+            <li>Click (shortcut 'o'): 現在機能しない ( 未作成: Undo ボタン予定 )</li>
+            <center>
+              <img src="gif/translation.gif" alt="translation">
+              <p>Translation デモ</p>
+            <center>
+          </ul>
+        </li>
+        <li>2D:
+          <ul>
+            <li>Click (shortcut '2'): 選んだものの z に関わらず、ものを示す。*この機能がものが持つ pixel で示すので、もしもう 3D に変更したら、そのままで示す。</li>
+          </ul>
+        </li>
+        <li>3D:
+          <ul>
+            <li>Click (shortcut '3'): 選んだものを ３次元で示す。</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>現在の状況と今後の展開</h2>
+      <ul>
+        <li>2025.01.20 : <a href="src/kkkk-0.1.tgz">Ver.0.1</a> - 2D 描き可能</li>
+        <li>2025.01.27 : <a href="src/kkkk-0.2.tgz">Ver.0.2</a> - 物 選びと回転可能</li>
+        <li>2025.02.02 : <a href="src/kkkk-0.3.tgz">Ver.0.3</a> - 3D 描き可能 (Final ?)</li>
+      </ul>
+    </section>
+    <section>
+      <h2>未作成・解けなかった問題</h2>
+      <ul>
+        <li>Undo 機能: 画面を保存のは大変である。一回 (xyz) 200*200*200、30回 30*200*200*200...</li>
+        <li>まだ3Dではない: 作れるものは実際 x*y*1 のものだ。上記のいきいきドーナツになれない。<a href="src/test_donut.c">これが</a>最初追加したい機能ですが、興味がある人はやってみてください</li>
+        <li>作ったもの保存できない: 効果的にどうやって保存するのかまだ解けない</li>
+        <li> 画面のピクセル: ピクセルが正方形ではないため、x:y は 1 に比例していない。そこで完璧な円が創造できない</li>
+     </ul>
+    </section>
+
+    <section>
+      <h2>参考</h2>
+      <ul>
+        <li>
+          <a href="https://medium.com/@dillihangrae/scanline-filling-algorithm-852ad47fb0dd" target="_blank">
+            "Scanline Filling Algorithm"</a> (Medium, 英語) (fillPolygon() 関数が使われたアルゴリズム)
+        </li>
+        <li>
+          <a href="https://en.wikipedia.org/wiki/Bresenham%27s_line_algorithm" target="_blank"> 
+            "Bresenham line algorithm"</a> (Wiki, 英語) (drawLine() 関数が使われたアルゴリズム)
+        </li>
+        <li>
+          <a href="https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/windows.html" target="_blank">
+            "Ncurses: windows"</a> (tldp, 英語)
+        </li>
+        <li>
+          <a href="https://tldp.org/HOWTO/NCURSES-Programming-HOWTO/mouse.html" target="_blank">
+            "Ncurses: mouse"</a> (tldp, 英語)
+        </li>
+        <li>
+          <a href="https://en.wikipedia.org/wiki/Feature_scaling" target="_blank">
+            "Feature scaling: use to give object its volume"</a> (Wiki, 英語) (renderOBJ() 関数が使われたアルゴリズム)
+        </li>
+        <li>
+          <a href="https://www.a1k0n.net/2011/07/20/donut-math.html" target="_blank">
+            "くるくるドーナツ"</a> (a1k0n, 英語)
+        </li>
+        <li>
+          <a href="https://en.wikipedia.org/wiki/Z-buffering" target="_blank">
+            "Z-buffer: "</a> (Wiki, 英語) (renderOBJ() 関数が使われたアルゴリズム)
+        </li>
+        <li>
+          <a href="https://en.wikipedia.org/wiki/Rotation_matrix" target="_blank">
+            "Rotation matrix"</a> (Wiki, 英語) (rotateAroundPoint() 関数が使われたアルゴリズム)
+        </li>
+                
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024-2025, <a href="https://outlook.office.com/owa/?path=/mail/action/compose&to=p244071@kushiro-ct.ac.jp&body=" target="_blank">p244071@kushiro-ct.ac.jp</a></p>
+  </footer>
+</body>
+</html>

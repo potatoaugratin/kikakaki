@@ -1,0 +1,119 @@
+body.dark-mode {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212; 
+    color: #e0e0e0; 
+    line-height: 1.6;
+  }
+  
+  header {
+    font-family: 'PixelFont', sans-serif;
+    background-color: #1f1f1f; 
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem 0;
+    border-bottom: 2px solid #007BFF;
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+  
+  main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  section {
+    font-family: 'PixelFont', sans-serif;
+    background: #1f1f1f; 
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+  }
+  
+  section h2 {
+    font-size: 1.8rem;
+    color: #007BFF;
+    border-left: 5px solid #007BFF;
+    padding-left: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  
+  img, video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 1rem 0;
+  }
+  
+  ul {
+    padding-left: 1.5rem;
+    line-height: 1.8;
+  }
+  
+  li {
+    margin-bottom: 1rem;
+  }
+  
+  a {
+    color: #007BFF;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  a:hover, a:focus {
+    opacity: 0.8;
+    text-decoration: underline;
+  }
+  
+  pre {
+    background: #2d2d2d; 
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-size: 0.875rem;
+    font-family: 'Courier New', Courier, monospace;
+    color: #e0e0e0;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #1f1f1f;
+    color: #ffffff;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    border-top: 2px solid #007BFF;
+  }
+  
+  .highlight-red {
+    color: red;
+    font-weight: bold;
+  }
+  
+  @media (max-width: 768px) {
+    main {
+      padding: 1rem;
+      margin: 1rem auto;
+    }
+    section {
+      padding: 1rem;
+    }
+  }
+  
+  @font-face {
+    font-family: 'PixelFont'; 
+    src: url('fonts/zpix.ttf') format('truetype'); 
+    font-weight: normal; 
+    font-style: normal; 
+  }
+  
